@@ -230,7 +230,6 @@ class SemLaserScan(LaserScan):
     # if all goes well, open label
     label = np.fromfile(filename, dtype=np.uint32)
     label = label.reshape((-1))
-
     # set it
     self.set_label(label)
 

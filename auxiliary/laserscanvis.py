@@ -6,7 +6,7 @@ from vispy.scene import visuals, SceneCanvas
 import numpy as np
 from matplotlib import pyplot as plt
 from auxiliary.laserscan import LaserScan, SemLaserScan
-
+import ryPub2ros
 
 class LaserScanVis:
   """Class that creates and handles a visualizer for a pointcloud"""
@@ -133,6 +133,7 @@ class LaserScanVis:
   def update_scan(self):
     # first open data
     self.scan.open_scan(self.scan_names[self.offset])
+    
     if self.semantics:
       self.scan.open_label(self.label_names[self.offset])
       self.scan.colorize()
@@ -142,9 +143,13 @@ class LaserScanVis:
     self.canvas.title = title
     if self.images:
       self.img_canvas.title = title
+    
+    
+    ryPub2ros.run(self.scan.points, self.scan.sem_label)
+    return
 
     # then do all the point cloud stuff
-
+    
     # plot scan
     power = 16
     # print()

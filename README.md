@@ -132,6 +132,8 @@ each scan into a 64 x 1024 image.
 
 ```sh
 $ ./visualize.py --sequence 00 --dataset /path/to/kitti/dataset/
+
+./visualize.py --sequence 00 --dataset /home/r/WINDOWS_DATA/dataset/kitti_odom/velodyne/dataset
 ```
 
 where:

@@ -133,14 +133,14 @@ learning_map:
   80: 18    # "pole"
   81: 19    # "traffic-sign"
   99: 0     # "other-object" to "unlabeled" ----------------------------mapped
-  252: 20    # "moving-car"
-  253: 21    # "moving-bicyclist"
-  254: 22    # "moving-person"
-  255: 23    # "moving-motorcyclist"
-  256: 24    # "moving-on-rails" mapped to "moving-other-vehicle" ------mapped
-  257: 24    # "moving-bus" mapped to "moving-other-vehicle" -----------mapped
-  258: 25    # "moving-truck"
-  259: 24    # "moving-other-vehicle"
+  252: 1 #20    # "moving-car"
+  253: 8  #21    # "moving-bicyclist"
+  254: 6  #22    # "moving-person"
+  255: 8  #23    # "moving-motorcyclist"
+  256: 5  #24    # "moving-on-rails" mapped to "moving-other-vehicle" ------mapped
+  257: 5  #24    # "moving-bus" mapped to "moving-other-vehicle" -----------mapped
+  258: 4  #25    # "moving-truck"
+  259: 5  #24    # "moving-other-vehicle"
 learning_map_inv: # inverse of previous map
   0: 0      # "unlabeled", and others ignored
   1: 10     # "car"
@@ -195,6 +195,49 @@ learning_ignore: # Ignore classes
   23: False    # "moving-motorcyclist"
   24: False    # "moving-other-vehicle"
   25: False    # "moving-truck"
+learning_color_map: # bgr
+  0: [0, 0, 0]
+  1: [245, 150, 100]
+  2: [245, 230, 100]
+  3: [150, 60, 30]
+  4: [180, 30, 80]
+  5: [250, 80, 100]
+  6: [30, 30, 255]
+  7: [200, 40, 255]
+  8: [90, 30, 150]
+  9: [255, 0, 255]
+  10: [255, 150, 255]
+  11: [75, 0, 75]
+  12: [75, 0, 175]
+  13: [0, 200, 255]
+  14: [50, 120, 255]
+  15: [0, 175, 0]
+  16: [0, 60, 135]
+  17: [80, 240, 150]
+  18: [150, 240, 255]
+  19: [0, 0, 255]
+learning_label_topic_map:
+  0: "/unlabeled_ignored_points"
+  1:  "/car_points"
+  2:  "/bicycle_points"
+  3:  "/motorcycle_points"
+  4:  "/truck_points"
+  5:  "/other_vehicle_points"
+  6:  "/person_points"
+  7:  "/bicyclist_points"
+  8:  "/motorcyclist_points"
+  9:  "/road_points"
+  10: "/parking_points"
+  11: "/sidewalk_points"
+  12: "/other_ground_points"
+  13: "/building_points"
+  14: "/fence_points"
+  15: "/vegetation_points"
+  16: "/trunk_points"
+  17: "/terrain_points"
+  18: "/pole_points"
+  19: "/traffic_sign_points"
+
 split: # sequence numbers
   train:
     - 0
